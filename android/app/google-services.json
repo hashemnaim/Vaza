@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193674994278",
+    "project_id": "vasa-d1f95",
+    "storage_bucket": "vasa-d1f95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193674994278:android:4f1bb2b63ab8571792c3a7",
+        "android_client_info": {
+          "package_name": "com.vasa.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfcOix0tAvSLmF-hS7g2SlwMNvstJaAJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
