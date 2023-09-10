@@ -56,6 +56,7 @@ class NotificationScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(kPadding),
                         itemCount:
                             notificationController.notificationList.length,
+                        physics: const ClampingScrollPhysics(),
                         separatorBuilder: (context, index) => const SpaceH12(),
                         itemBuilder: (context, index) {
                           return Container(

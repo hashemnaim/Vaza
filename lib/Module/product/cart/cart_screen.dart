@@ -515,7 +515,6 @@ class _CartScreenState extends State<CartScreen> {
                             Obx(() => Center(
                                   child: Text(
                                     "${cartController.listProductCart[index].quantity! < 1 ? "0" : cartController.listProductCart[index].quantity}",
-                                    // cartController.productQuantity.value.toString(),
                                     style: Theme.of(context)
                                         .textTheme
                                         .titleMedium!

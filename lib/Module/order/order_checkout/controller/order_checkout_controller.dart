@@ -62,7 +62,6 @@ class OrderCheckOutController extends GetxController {
   onConfirmOrder(context) async {
     if (selectedValue.value == 'card') {
       sendeOrder().then((value) {
-        log(value.toString());
         if (value["success"] == true) {
           Get.to(() => WebViewScreen(
                 url: value["data"]["InvoiceURL"],

@@ -29,7 +29,6 @@ import 'package:faza_app/Module/setting/profile/profile.dart';
 import 'package:faza_app/Module/setting/subscription/subscription_screen.dart';
 import 'package:faza_app/Module/tab/tab.dart';
 import 'package:get/get.dart';
-
 import '../Module/home/category/catogery_list_screen.dart';
 import '../Module/home/category/subCatogery_list_screen.dart';
 import '../Module/select_city/select_city.dart';

@@ -17,6 +17,8 @@ abstract class EnglishLocale {
     "There is a new update": "There is a new update",
     "REFRESH": "Refresh",
     "sections": "Sections",
+    "instantDelivery": "Instant Delivery",
+    "Or": "Or",
 
     "wedding": "wedding",
     "graduation": "graduation",

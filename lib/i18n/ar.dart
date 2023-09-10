@@ -174,6 +174,8 @@ abstract class ArabicLocale {
     "BACK_TO_MAIN": "العودة للرئيسية",
     "ORDER_FAILED": "فشل الطلب",
     "WARNING": "تحذير",
+    "Or": "أو",
+    "instantDelivery": "التوصيل فوري",
     "PLEASE_SELECT_PAYMENT_METHOD": "الرجاء تحديد طريقة الدفع!",
     // order complete details
     "NOTE": "ملاحظة",

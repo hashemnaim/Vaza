@@ -45,6 +45,7 @@ class OrderDetailController extends GetxController {
   Rx<DateTime> deliveryDate = DateTime.now().obs;
   RxInt addressId = 0.obs;
   RxInt orderId = 0.obs;
+  RxBool isDelivary = false.obs;
 
   @override
   void onInit() {
@@ -102,7 +103,7 @@ class OrderDetailController extends GetxController {
   onContinueClick() async {
     if (formKey.currentState!.validate()) {
       if (Get.arguments == null) return;
-      if (selectTime.value == "") {
+      if (selectTime.value == "" && isDelivary.value == false) {
         showToast("Complete the data".tr, "Delivery time must be specified".tr,
             ToastType.DANGER);
       } else {
@@ -132,10 +133,10 @@ class OrderDetailController extends GetxController {
           "delivery_date": deliveryDate.value.toString(),
           "delivery_time": selectTime.value,
           "recipient_name": nameController.text,
+          "immediate_delivery": isDelivary.value,
           "recipient_mobile": phoneNumber.value,
           "message": messageController.text,
         };
-        log(data.toString());
         showOrHideLoading(false, "VERIFYING".tr);
 
         var response = await OrderService.createOrder(data);

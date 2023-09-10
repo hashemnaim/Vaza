@@ -121,18 +121,85 @@ class OrderDetailScreen extends StatelessWidget {
                         //       )),
                         // ),
                         const SpaceH12(),
-                        Text("PICK_DELIVERY_TIME".tr,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primaryColor)),
-                        const SpaceH8(),
-                        SizedBox(
-                            height: 50,
-                            width: Get.width,
-                            child: const TimeFilterScreen()),
+
+                        Obx(() => AnimatedSwitcher(
+                              duration: const Duration(seconds: 1),
+                              child: orderDetailController.isDelivary.value ==
+                                      true
+                                  ? Container()
+                                  : Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text("PICK_DELIVERY_TIME".tr,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge!
+                                                .copyWith(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: AppColors
+                                                        .primaryColor)),
+                                        const SpaceH8(),
+                                        SizedBox(
+                                            height: 50,
+                                            width: Get.width,
+                                            child: const TimeFilterScreen()),
+                                      ],
+                                    ),
+                            )),
+                        const SpaceH16(),
+
+                        Row(
+                          children: [
+                            const Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16),
+                              child: Text("Or".tr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.primaryColor)),
+                            ),
+                            const Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                              ),
+                            )
+                          ],
+                        ),
+                        Obx(() => ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Row(
+                                children: [
+                                  Checkbox(
+                                      activeColor: AppColors.primaryColor,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(6)),
+                                      value: orderDetailController
+                                          .isDelivary.value,
+                                      onChanged: (value) {
+                                        orderDetailController.isDelivary.value =
+                                            value!;
+                                      }),
+                                  const SpaceW4(),
+                                  Text("instantDelivery".tr,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              color: AppColors.primaryColor)),
+                                ],
+                              ),
+                            )),
                         const SpaceH12(),
                         Text("RECIPIENT_S_NAME".tr,
                             style: Theme.of(context)

@@ -32,12 +32,15 @@ class CitySelectionPage extends StatelessWidget {
             : Column(
                 children: [
                   const SpaceH48(),
-                  Text(
-                    'Please add the city of the recipient of the gift'.tr,
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.black),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Please add the city of the recipient of the gift'.tr,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.black),
+                    ),
                   ),
                   Expanded(
                     child: ListView.builder(

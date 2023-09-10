@@ -23,6 +23,7 @@ class OrderCheckOutScreen extends StatelessWidget {
           backgroundColor: AppColors.backgroundColor,
           body: SafeArea(
             child: SingleChildScrollView(
+              physics: const ClampingScrollPhysics(),
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               child: Padding(
                 padding: const EdgeInsets.all(kPadding),

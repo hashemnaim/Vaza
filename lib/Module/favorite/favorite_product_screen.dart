@@ -71,6 +71,7 @@ class _FavoriteProductScreenState extends State<FavoriteProductScreen> {
                   kPadding,
                   kPadding * 2.8,
                 ),
+
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -104,6 +105,7 @@ class _FavoriteProductScreenState extends State<FavoriteProductScreen> {
                     shrinkWrap: true,
                     itemCount:
                         favoriteProductController.favoriteProductList.length,
+                    physics: const ClampingScrollPhysics(),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,

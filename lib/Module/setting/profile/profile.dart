@@ -55,8 +55,8 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(kPadding),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

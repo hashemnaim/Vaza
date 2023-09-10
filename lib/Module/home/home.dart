@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
           const SpaceH8(),
           Expanded(
               child: Obx(() => SingleChildScrollView(
+                    physics: const ClampingScrollPhysics(),
                     child: Column(children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
