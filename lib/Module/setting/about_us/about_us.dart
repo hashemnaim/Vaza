@@ -2,8 +2,9 @@ import 'package:faza_app/utils/values.dart';
 import 'package:faza_app/Module/components/appbar.dart';
 import 'package:faza_app/Module/setting/about_us/controller/about_us_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:get/get.dart';
-import 'package:flutter_quill/flutter_quill.dart' as quill;
+// import 'package:flutter_quill/flutter_quill.dart' as quill;
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({Key? key}) : super(key: key);
@@ -46,16 +47,17 @@ class AboutUsScreen extends StatelessWidget {
                                   ), // Circular loading indicator
                                 ),
                               )
-                            : quill.QuillEditor(
-                                controller: controller.quillController,
+                            : QuillEditor(
                                 scrollController: ScrollController(),
-                                scrollable: true,
-                                focusNode: FocusNode(canRequestFocus: false),
-                                autoFocus: false,
-                                readOnly: false,
-                                expands: false,
-                                padding: EdgeInsets.zero,
-                              )),
+                                configurations: QuillEditorConfigurations(
+                                  scrollable: true,
+                                  controller: controller.quillController,
+                                  autoFocus: false,
+                                  readOnly: false,
+                                  expands: false,
+                                  padding: EdgeInsets.zero,
+                                ),
+                                focusNode: FocusNode(canRequestFocus: false))),
                       ],
                     ),
                   ),

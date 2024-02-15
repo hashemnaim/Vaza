@@ -1,23 +1,21 @@
 import 'package:faza_app/utils/values.dart';
 import 'package:faza_app/Module/home/personal_shopping/personal_shopping_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/flutter_quill.dart' as quill;
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:get/get.dart';
 
 class PersonalShoppingScreen extends StatelessWidget {
-  const PersonalShoppingScreen({Key? key}) : super(key: key);
+  PersonalShoppingScreen({super.key});
+  var controller = Get.put(PersonalShoppingController());
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(PersonalShoppingController());
-
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
-        centerTitle: true,
-        elevation: 0,
-        title: Text('PERSONALSHOPPER'.tr),
-      ),
+          backgroundColor: AppColors.primaryColor,
+          centerTitle: true,
+          elevation: 0,
+          title: Text('PERSONALSHOPPER'.tr)),
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         padding: const EdgeInsets.all(kPadding),
@@ -27,21 +25,18 @@ class PersonalShoppingScreen extends StatelessWidget {
                 ? SizedBox(
                     height: Get.height - 10,
                     child: const Center(
-                      child: CircularProgressIndicator(
-                        color: AppColors.primaryColor,
-                      ), // Circular loading indicator
-                    ),
-                  )
-                : quill.QuillEditor(
-                    controller: controller.quillController,
+                        child: CircularProgressIndicator(
+                            color: AppColors.primaryColor)))
+                : QuillEditor(
                     scrollController: ScrollController(),
-                    scrollable: true,
                     focusNode: FocusNode(canRequestFocus: false),
-                    autoFocus: false,
-                    readOnly: false,
-                    expands: false,
-                    padding: EdgeInsets.zero,
-                  )),
+                    configurations: QuillEditorConfigurations(
+                        autoFocus: false,
+                        readOnly: false,
+                        expands: false,
+                        scrollable: true,
+                        controller: controller.quillController,
+                        padding: EdgeInsets.zero)))
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:faza_app/utils/values.dart';
 import 'package:faza_app/Module/components/appbar.dart';
 import 'package:faza_app/Module/setting/profile/controller/profile_controller.dart';
-import 'package:flutter_quill/flutter_quill.dart' as quill;
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -46,15 +46,17 @@ class TAndCScreen extends StatelessWidget {
                                   ), // Circular loading indicator
                                 ),
                               )
-                            : quill.QuillEditor(
-                                controller: controller.quillController,
+                            : QuillEditor(
                                 scrollController: ScrollController(),
-                                scrollable: true,
                                 focusNode: FocusNode(canRequestFocus: false),
-                                autoFocus: false,
-                                readOnly: false,
-                                expands: false,
-                                padding: EdgeInsets.zero,
+                                configurations: QuillEditorConfigurations(
+                                  scrollable: true,
+                                  autoFocus: false,
+                                  padding: EdgeInsets.zero,
+                                  readOnly: false,
+                                  expands: false,
+                                  controller: controller.quillController,
+                                ),
                               )),
                       ],
                     ),
