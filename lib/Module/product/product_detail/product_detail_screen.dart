@@ -6,16 +6,16 @@ import 'package:faza_app/services/favorite_function_service.dart';
 import 'package:faza_app/helper/storage_helper.dart';
 import 'package:faza_app/widgets/custom_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
-import 'package:flutter_quill/flutter_quill.dart' as quill;
 import 'package:skeletons/skeletons.dart';
 import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_svg.dart';
 import 'SliderImageWithPagerPoints.dart';
 
 class ProductDetailScreen extends StatefulWidget {
-  const ProductDetailScreen({Key? key}) : super(key: key);
+  const ProductDetailScreen({super.key});
 
   @override
   State<ProductDetailScreen> createState() => _ProductDetailScreenState();
@@ -200,9 +200,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                             .titleLarge!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold)),
-                                    quill.QuillEditor(
-                                        controller: quill.QuillController(
-                                            document: quill.Document.fromJson(
+                                    QuillEditor(
+                                      configurations: QuillEditorConfigurations(
+                                        autoFocus: false,
+                                        readOnly: false,
+                                        expands: false,
+                                        scrollable: true,
+                                        controller: QuillController(
+                                            document: Document.fromJson(
                                                 jsonDecode(
                                                     productDetailController
                                                         .productDetail
@@ -211,14 +216,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                             selection:
                                                 const TextSelection.collapsed(
                                                     offset: 0)),
-                                        scrollController: ScrollController(),
-                                        scrollable: true,
-                                        focusNode:
-                                            FocusNode(canRequestFocus: false),
-                                        autoFocus: false,
-                                        readOnly: false,
-                                        expands: false,
-                                        padding: EdgeInsets.zero)
+                                        padding: EdgeInsets.zero,
+                                        // controller: controller.quillController,
+                                      ),
+                                      scrollController: ScrollController(),
+                                      focusNode:
+                                          FocusNode(canRequestFocus: false),
+                                    )
                                   ]))
                     ]))),
         bottomNavigationBar: Padding(

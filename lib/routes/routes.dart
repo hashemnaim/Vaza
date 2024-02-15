@@ -69,8 +69,7 @@ class Routes {
     GetPage(name: '/order-checkout', page: () => const OrderCheckOutScreen()),
     GetPage(name: '/search', page: () => const SearchScreen()),
     GetPage(name: '/subscription', page: () => const SubscriptionScreen()),
-    GetPage(
-        name: '/personal_shopping', page: () => const PersonalShoppingScreen()),
+    GetPage(name: '/personal_shopping', page: () => PersonalShoppingScreen()),
     GetPage(name: '/gallery', page: () => const GalleryPage()),
     GetPage(
         name: '/order-complete-detail',

@@ -10,8 +10,8 @@ class DioHelper {
         baseUrl: BASE_URL,
         receiveDataWhenStatusError: true,
         followRedirects: false,
-        sendTimeout: 60 * 2000,
-        receiveTimeout: 60 * 1000,
+        sendTimeout: const Duration(seconds: 15),
+        receiveTimeout: const Duration(seconds: 15),
         validateStatus: (status) {
           return status! <= 500;
         },

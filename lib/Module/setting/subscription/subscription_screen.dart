@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SubscriptionScreen extends StatelessWidget {
-  const SubscriptionScreen({Key? key}) : super(key: key);
+  const SubscriptionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,43 +16,37 @@ class SubscriptionScreen extends StatelessWidget {
         flexibleSpace: Stack(
           children: [
             Container(
-              height: Get.height / 2.5,
-              width: Get.width,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/img/Sub_img.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: kTopPadding(context) + 35,
-                    left: 10,
-                    child: IconButton(
-                      color: AppColors.white,
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios_new,
-                      ),
-                    ),
+                height: Get.height / 2.5,
+                width: Get.width,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/img/Sub_img.png'),
+                    fit: BoxFit.cover,
                   ),
+                ),
+                child: Stack(children: [
                   Positioned(
-                    bottom: 65,
-                    right: 0,
-                    left: 0,
-                    child: Text(
-                      'Subscription system from vasa',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                          fontWeight: FontWeight.w600, color: AppColors.white),
-                    ),
-                  )
-                ],
-              ),
-            ),
+                      top: kTopPadding(context) + 35,
+                      left: 10,
+                      child: IconButton(
+                          color: AppColors.white,
+                          onPressed: () {
+                            Get.back();
+                          },
+                          icon: const Icon(Icons.arrow_back_ios_new))),
+                  Positioned(
+                      bottom: 65,
+                      right: 0,
+                      left: 0,
+                      child: Text('Subscription system from vasa',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.white)))
+                ]))
           ],
         ),
         backgroundColor: Colors.transparent,
